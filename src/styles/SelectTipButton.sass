@@ -1,0 +1,26 @@
+.select-tip-btn
+    position: relative
+
+    &__input
+        position: absolute
+        inset: 0
+
+    &__container
+        position: relative
+        display: inline-block
+        border-radius: 8px
+        padding-block: 12px
+        inline-size: 100%
+        font-size: 2.4rem
+        color: var(--white)
+        background-color: var(--very-dark-cyan)
+        text-align: center
+
+    &__input:hover + &__container,
+    &__input:focus-visible + &__container
+        color: var(--very-dark-cyan)
+        background-color: var(--light-grayish-cyan)
+
+    &__input:checked + &__container
+        color: var(--very-dark-cyan)
+        background-color: var(--strong-cyan)

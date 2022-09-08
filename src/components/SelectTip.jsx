@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/SelectTip.sass';
 import SelectTipButton from './SelectTipButton';
 
 const percentages = [5, 10, 15, 25, 50];
