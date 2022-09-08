@@ -1,0 +1,79 @@
+/* ---- Reset CSS ---- */
+html,
+body,
+div,
+span,
+applet,
+object,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+del,
+dfn,
+em,
+img,
+ol,
+ul,
+li,
+button,
+fieldset,
+form,
+input,
+label,
+legend,
+caption,
+article,
+aside,
+details,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section,
+audio,
+video
+    margin: 0
+    border: 0
+    box-sizing: content-box
+    padding: 0
+    font-size: 100%
+    font: inherit
+    vertical-align: baseline
+
+body
+    line-height: 1
+
+ol,
+ul
+    list-style: none
+
+button
+    background-color: transparent
+
+/* ---- Global ---- */
+
+:root
+    --white: hsl(0deg 0% 100%)
+    --strong-cyan: hsl(172, 67%, 45%)
+    --page-color: var(--light-grayish-cyan)
+    --ink-color: var(--dark-grayish-cyan)
+    --very-dark-cyan: hsl(183, 100%, 15%)
+    --dark-grayish-cyan: hsl(186, 14%, 43%)
+    --grayish-cyan: hsl(184, 14%, 56%)
+    --light-grayish-cyan: hsl(185, 41%, 84%)
+    --very-light-grayish-cyan: hsl(189, 41%, 97%)
+
+html
+    font-size: clamp(0.6rem, 0.425rem + 1vw, 1rem)
+    font-family: monospace
+
+body
+    font-size: 1.6rem
+    color: var(--ink-color)
+    background-color: var(--page-color)
