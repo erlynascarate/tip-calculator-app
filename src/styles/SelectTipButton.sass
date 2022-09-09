@@ -2,19 +2,19 @@
     position: relative
 
     &__input
-        position: absolute
-        inset: 0
+        inline-size: 100%
+        block-size: 100%
 
     &__container
-        position: relative
-        display: inline-block
+        position: absolute
+        inset: 0
+        display: inline-flex
+        justify-content: center
+        align-items: center
         border-radius: 8px
-        padding-block: 12px
-        inline-size: 100%
         font-size: 2.4rem
         color: var(--white)
         background-color: var(--very-dark-cyan)
-        text-align: center
 
     &__input:hover + &__container,
     &__input:focus-visible + &__container
