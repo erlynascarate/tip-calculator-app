@@ -1,4 +1,3 @@
-import '../styles/App.sass';
 import Header from './Header';
 import Main from '../containers/Main';
 

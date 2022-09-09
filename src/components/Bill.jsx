@@ -1,16 +1,15 @@
 import React from 'react';
-import '../styles/Bill.sass';
 
 const Bill = () => {
     return (
-        <fieldset className="bill">
+        <fieldset className="fieldset">
             <legend>
-                <label className="bill__title" htmlFor="bill">
+                <label className="fieldset__title" htmlFor="bill">
                     Bill
                 </label>
             </legend>
-            <div className="bill-input">
-                <label className="bill-input__icon" htmlFor="bill">
+            <div className="fieldset-input">
+                <label className="fieldset-input__icon" htmlFor="bill">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="11"
@@ -24,9 +23,11 @@ const Bill = () => {
                 </label>
                 <input
                     id="bill"
-                    className="bill-input__input"
+                    className="fieldset-input__input"
                     type="number"
                     placeholder="0"
+                    min={0.0}
+                    inputMode="decimal"
                 />
             </div>
         </fieldset>

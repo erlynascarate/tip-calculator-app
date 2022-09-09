@@ -2,19 +2,16 @@ import React from 'react';
 
 const NumberOfPeople = () => {
     return (
-        <fieldset className="number-of-people">
-            <legend>
-                <label
-                    className="number-of-people__title"
-                    htmlFor="number-of-people"
-                >
+        <fieldset className="fieldset">
+            <legend className="fieldset-legend">
+                <label className="fieldset__title" htmlFor="number-of-people">
                     Number of People
                 </label>
-                <span className="number-of-people__warning">Can't be zero</span>
+                <span className="fieldset__warning">Can't be zero</span>
             </legend>
-            <div className="number-of-people-input">
+            <div className="fieldset-input">
                 <label
-                    className="number-of-people-input__icon"
+                    className="fieldset-input__icon"
                     htmlFor="number-of-people"
                 >
                     <svg
@@ -30,9 +27,11 @@ const NumberOfPeople = () => {
                 </label>
                 <input
                     id="number-of-people"
-                    className="number-of-people-input__input"
+                    className="fieldset-input__input"
                     type="number"
                     placeholder="0"
+                    min={1}
+                    inputMode="numeric"
                 />
             </div>
         </fieldset>
