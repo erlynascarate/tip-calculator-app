@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Info.scss';
 import InfoBox from './InfoBox';
 
 const infoBoxData = [

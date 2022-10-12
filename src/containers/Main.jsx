@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Main.sass';
+import '../styles/Main.scss';
 import Bill from '../components/Bill';
 import Info from '../components/Info';
 import NumberOfPeople from '../components/NumberOfPeople';

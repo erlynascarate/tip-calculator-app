@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/SelectTipButton.sass';
+import '../styles/SelectTipButton.scss';
 
 const SelectTipButton = ({ id, percentage }) => {
     return (

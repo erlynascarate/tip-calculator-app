@@ -1,0 +1,82 @@
+@use 'vars';
+
+/* ---- Reset CSS ---- */
+html,
+body,
+div,
+span,
+applet,
+object,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+del,
+dfn,
+em,
+img,
+ol,
+ul,
+li,
+button,
+fieldset,
+form,
+input,
+label,
+legend,
+caption,
+article,
+aside,
+details,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+    margin: 0;
+    border: 0;
+    box-sizing: content-box;
+    padding: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+button {
+    background-color: transparent;
+}
+
+/* ---- Global ---- */
+html {
+    font-size: clamp(0.6rem, 0.425rem + 1vw, 0.8rem);
+    font-family: monospace;
+}
+
+body {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: vars.$ink-color;
+    background-color: vars.$page-color;
+}
+
+input {
+    font-size: 2.4rem;
+    color: vars.$very-dark-cyan;
+    outline-color: vars.$strong-cyan;
+}
