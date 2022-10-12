@@ -1,7 +1,12 @@
 @use 'vars';
 
 .form {
-    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-start-start-radius: 2.8rem;
+    border-start-end-radius: 2.8rem;
+    padding: 3.2rem 2.8rem;
     background-color: vars.$white;
 
     &-container {
