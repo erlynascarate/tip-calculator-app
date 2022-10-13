@@ -17,6 +17,8 @@ const SelectTip = () => {
                 className='select-tip__custom'
                 type='number'
                 placeholder='Custom'
+                min={0.0}
+                inputMode='decimal'
             />
         </fieldset>
     )

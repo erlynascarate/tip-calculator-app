@@ -15,5 +15,9 @@
         padding-inline: 8px;
         background-color: vars.$very-light-grayish-cyan;
         text-align: end;
+
+        &:out-of-range {
+            outline-color: vars.$warning;
+        }
     }
 }
