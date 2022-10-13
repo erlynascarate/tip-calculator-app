@@ -1,5 +1,5 @@
-import Header from './Header';
-import Main from '../containers/Main';
+import Header from './Header'
+import Main from '../containers/Main'
 
 function App() {
     return (
@@ -7,7 +7,7 @@ function App() {
             <Header />
             <Main />
         </>
-    );
+    )
 }
 
-export default App;
+export default App
