@@ -40,6 +40,10 @@
     &__warning {
         display: none;
         color: vars.$warning;
+
+        &--show {
+            display: block;
+        }
     }
 
     &-input {

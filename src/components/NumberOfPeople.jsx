@@ -1,11 +1,26 @@
-const NumberOfPeople = () => {
+import { useState } from 'react'
+
+const NumberOfPeople = ({ people }) => {
+    const [showWarning, setShowWarning] = useState(false)
+
+    const warning = event => {
+        const value = parseInt(event.target.value)
+        value < 1 ? setShowWarning(true) : setShowWarning(false)
+    }
+
     return (
         <fieldset className='fieldset'>
             <legend className='fieldset-legend'>
                 <label className='fieldset__title' htmlFor='number-of-people'>
                     Number of People
                 </label>
-                <span className='fieldset__warning'>Can&apos;t be zero</span>
+                <span
+                    className={`fieldset__warning ${
+                        showWarning ? 'fieldset__warning--show' : ''
+                    }`}
+                >
+                    Can&apos;t be zero
+                </span>
             </legend>
             <div className='fieldset-input'>
                 <label
@@ -30,6 +45,8 @@ const NumberOfPeople = () => {
                     placeholder='0'
                     min={1}
                     inputMode='numeric'
+                    ref={people}
+                    onChange={warning}
                 />
             </div>
         </fieldset>

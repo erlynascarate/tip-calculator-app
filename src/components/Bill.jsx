@@ -1,4 +1,4 @@
-const Bill = () => {
+const Bill = ({ bill }) => {
     return (
         <fieldset className='fieldset'>
             <legend>
@@ -26,6 +26,7 @@ const Bill = () => {
                     placeholder='0'
                     min={0.0}
                     inputMode='decimal'
+                    ref={bill}
                 />
             </div>
         </fieldset>
