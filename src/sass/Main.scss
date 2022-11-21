@@ -1,5 +1,9 @@
 @use 'vars';
 
+main {
+    grid-row: 4;
+}
+
 .form {
     display: flex;
     flex-direction: column;
