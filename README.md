@@ -21,10 +21,15 @@ Users should be able to:
 ### Built with
 
 -   Semantic HTML5 markup
+-   SCSS
 -   Flexbox
 -   CSS Grid
 -   Mobile-first workflow
 -   Vite + React
+
+### Useful resource
+
+-   [PWA Vite Plugin](https://vite-pwa-org.netlify.app/) - Used to turn the app into a progressive web app
 
 ## Author
 
