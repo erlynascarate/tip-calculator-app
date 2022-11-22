@@ -2,11 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-const description = `A simple yet elegant and efficient tip calculator, designed to be easy to use.
-
-Features:
-✓ Calculate the correct tip and the total cost of the bill per person.
-✓ No Internet Connection Required.
+const description = `Calculate in a matter of seconds how much you have to tip and the total cost of the bill per person.
     
 Savings icon created by Freepik - Flaticon
 https://www.flaticon.com/free-icons/savings`
@@ -22,6 +18,7 @@ export default defineConfig({
                 'favicon-32x32.png',
                 'favicon-16x16.png',
                 'apple-touch-icon.png',
+                'screenshot.png',
             ],
             manifest: {
                 name: 'SPLITTER: Tip Calculator',
