@@ -2,6 +2,20 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
+const description = `A simple yet elegant and efficient tip calculator, designed to be easy to use.
+Ideal for those who go out to eat at restaurants.
+The tip calculator even splits the bill among a group of people, making it super easy to figure out what each person should pay for their share.
+It's free and works offline.
+    
+Features:
+✓ Divide the tip by the number of people.
+✓ Calculate the total cost of the bill per person.
+✓ You can specify your own tip with percentages.
+✓ No Internet Connection Required.
+    
+Savings icon created by Freepik - Flaticon
+https://www.flaticon.com/free-icons/savings`
+
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
@@ -16,9 +30,8 @@ export default defineConfig({
             ],
             manifest: {
                 name: 'SPLITTER: Tip Calculator',
-                short_name: 'SPLITTER',
-                description:
-                    'A tip calculator\n\nIcono de ahorros creado por Freepik - Flaticon\nhttps://www.flaticon.es/iconos-gratis/ahorros',
+                short_name: 'Tip Calculator',
+                description,
                 theme_color: '#c5e4e7',
                 background_color: '#c5e4e7',
                 orientation: 'portrait',
@@ -51,6 +64,8 @@ export default defineConfig({
                         src: 'screenshot.png',
                         sizes: '850x1860',
                         type: 'image/png',
+                        platform: 'narrow',
+                        label: 'Tip calculator being used',
                     },
                 ],
             },
