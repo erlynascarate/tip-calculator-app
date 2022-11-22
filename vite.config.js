@@ -3,14 +3,9 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 const description = `A simple yet elegant and efficient tip calculator, designed to be easy to use.
-Ideal for those who go out to eat at restaurants.
-The tip calculator even splits the bill among a group of people, making it super easy to figure out what each person should pay for their share.
-It's free and works offline.
-    
+
 Features:
-✓ Divide the tip by the number of people.
-✓ Calculate the total cost of the bill per person.
-✓ You can specify your own tip with percentages.
+✓ Calculate the correct tip and the total cost of the bill per person.
 ✓ No Internet Connection Required.
     
 Savings icon created by Freepik - Flaticon
