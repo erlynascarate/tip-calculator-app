@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../sass/NumberOfPeople.scss'
 
 const NumberOfPeople = ({ people }) => {
     const [showWarning, setShowWarning] = useState(false)

@@ -1,0 +1,32 @@
+@use 'vars';
+
+main {
+    grid-row: 4;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    margin: auto;
+    border-start-start-radius: 2.8rem;
+    border-start-end-radius: 2.8rem;
+    padding: 3.2rem 2.8rem;
+    max-inline-size: 74rem;
+    background-color: vars.$white;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+}
+
+@media (min-width: 750px) {
+    .form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 2.8rem;
+        inline-size: 87%;
+    }
+}
