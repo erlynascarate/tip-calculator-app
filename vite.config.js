@@ -18,7 +18,7 @@ export default defineConfig({
                 name: 'SPLITTER: Tip Calculator',
                 short_name: 'SPLITTER',
                 description:
-                    'A tip calculator\n\nAhorros iconos creados por Freepik - Flaticon\nhttps://www.flaticon.es/iconos-gratis/ahorros',
+                    'A tip calculator\n\nIcono de ahorros creado por Freepik - Flaticon\nhttps://www.flaticon.es/iconos-gratis/ahorros',
                 theme_color: '#c5e4e7',
                 background_color: '#c5e4e7',
                 orientation: 'portrait',
