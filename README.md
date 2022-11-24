@@ -14,7 +14,8 @@ Users should be able to:
 
 ### Link
 
--   Live Site URL: [Splitter](https://splittere.netlify.app/)
+-   Solution URL: [https://www.frontendmentor.io/solutions/tip-calculator-progressive-web-app-built-with-vite-react-6FVJkekjFj](https://www.frontendmentor.io/solutions/tip-calculator-progressive-web-app-built-with-vite-react-6FVJkekjFj)
+-   Live Site URL: [https://splittere.netlify.app/](https://splittere.netlify.app/)
 
 ## My process
 
@@ -34,3 +35,4 @@ Users should be able to:
 ## Author
 
 -   Twitter - [@erlynascarate](https://twitter.com/erlynascarate)
+-   Frontend Mentor - [@erlynascarate](https://www.frontendmentor.io/profile/erlynascarate)
