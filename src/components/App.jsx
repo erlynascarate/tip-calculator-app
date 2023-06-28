@@ -7,6 +7,7 @@ import SelectTipButton from '../components/SelectTipButton'
 import NumberOfPeople from '../components/NumberOfPeople'
 import Info from '../components/Info'
 import InfoBox from '../components/InfoBox'
+import InstallationButton from './InstallationButton'
 
 const initialResult = {
     tipAmount: 0.0,
@@ -81,6 +82,7 @@ function App() {
                     onSubmit={event => event.defaultPrevented()}
                     onReset={reset}
                 >
+                    <InstallationButton />
                     <section className='form-container' onChange={calculate}>
                         <Bill bill={bill} />
                         <SelectTip
