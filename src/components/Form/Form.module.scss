@@ -1,0 +1,22 @@
+@use '../../scss/base' as *;
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    margin: auto;
+    border-start-start-radius: 2.8rem;
+    border-start-end-radius: 2.8rem;
+    padding-block: 3.2rem;
+    padding-inline: 2.8rem;
+    max-inline-size: 72rem;
+    background-color: $white;
+
+    @media (min-width: 750px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 2.8rem;
+        inline-size: 87%;
+    }
+}

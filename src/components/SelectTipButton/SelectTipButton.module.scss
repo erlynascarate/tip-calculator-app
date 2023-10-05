@@ -1,6 +1,6 @@
-@use 'vars';
+@use '../../scss/base' as *;
 
-.select-tip-btn {
+.selectTipBtn {
     position: relative;
 
     &__input {
@@ -16,18 +16,20 @@
         align-items: center;
         border-radius: 8px;
         font-size: 2.4rem;
-        color: vars.$white;
-        background-color: vars.$very-dark-cyan;
+        color: $white;
+        cursor: pointer;
+        background-color: $very-dark-cyan;
+        user-select: none;
     }
 
     &__input:hover + &__container,
     &__input:focus-visible + &__container {
-        color: vars.$very-dark-cyan;
-        background-color: vars.$light-grayish-cyan;
+        color: $very-dark-cyan;
+        background-color: $light-grayish-cyan;
     }
 
     &__input:checked + &__container {
-        color: vars.$very-dark-cyan;
-        background-color: vars.$strong-cyan;
+        color: $very-dark-cyan;
+        background-color: $strong-cyan;
     }
 }

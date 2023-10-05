@@ -31,6 +31,7 @@ Users should be able to:
 ### Useful resource
 
 -   [PWA Vite Plugin](https://vite-pwa-org.netlify.app/) - Used to turn the app into a progressive web app
+-   [React Hook Form](https://react-hook-form.com/) - Used to validate the form
 
 ## Author
 

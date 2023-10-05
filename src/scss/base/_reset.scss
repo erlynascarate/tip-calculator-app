@@ -1,10 +1,7 @@
-/* ---- Reset CSS ---- */
 html,
 body,
 div,
 span,
-applet,
-object,
 h1,
 h2,
 h3,
@@ -13,9 +10,6 @@ h5,
 h6,
 p,
 a,
-del,
-dfn,
-em,
 img,
 ol,
 ul,
@@ -29,15 +23,12 @@ legend,
 caption,
 article,
 aside,
-details,
 figure,
 figcaption,
 footer,
 header,
 nav,
-section,
-audio,
-video {
+section {
     margin: 0;
     border: 0;
     box-sizing: content-box;

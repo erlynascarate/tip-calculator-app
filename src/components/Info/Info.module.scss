@@ -1,0 +1,30 @@
+@use '../../scss/base' as *;
+
+.info {
+    display: grid;
+    grid-template-rows: repeat(2, auto) 1fr auto;
+    row-gap: 2.8rem;
+    border-radius: 16px;
+    padding: 2.4rem;
+    padding-block-start: 3.8rem;
+    background-color: $very-dark-cyan;
+
+    &__reset {
+        grid-row: 4;
+        border-radius: 6px;
+        padding-block: 12px;
+        font-size: 2rem;
+        cursor: pointer;
+        background-color: $strong-cyan;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $light-grayish-cyan;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: $dark-grayish-cyan;
+        }
+    }
+}

@@ -1,16 +1,16 @@
-@use 'vars';
+@use '../../scss/base' as *;
 
-.installation-button {
+.installationButton {
     position: absolute;
     inset-block-start: -1.2rem;
     inset-inline-start: calc(50% - 6.5rem);
     border-radius: 16px;
     padding-block: 8px;
     padding-inline: 12px;
-    color: vars.$white;
-    background-color: vars.$very-dark-cyan;
+    color: $white;
+    background-color: $very-dark-cyan;
 
     &:hover {
-        background-color: vars.$strong-cyan;
+        background-color: $strong-cyan;
     }
 }

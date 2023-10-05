@@ -1,39 +1,7 @@
-@use 'vars';
-
-main {
-    grid-row: 4;
-}
-
-.form {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    margin: auto;
-    border-start-start-radius: 2.8rem;
-    border-start-end-radius: 2.8rem;
-    padding: 3.2rem 2.8rem;
-    max-inline-size: 72rem;
-    background-color: vars.$white;
-
-    &-container {
-        display: flex;
-        flex-direction: column;
-        row-gap: 30px;
-    }
-}
-
-@media (min-width: 750px) {
-    .form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        border-radius: 2.8rem;
-        inline-size: 87%;
-    }
-}
+@use '../../scss/base' as *;
 
 .fieldset {
-    &-legend {
+    &Legend {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -43,15 +11,11 @@ main {
     }
 
     &__warning {
-        display: none;
-        color: vars.$warning;
-
-        &--show {
-            display: block;
-        }
+        display: block;
+        color: $warning;
     }
 
-    &-input {
+    &Input {
         position: relative;
         display: flex;
         margin-block-start: 8px;
@@ -73,11 +37,11 @@ main {
             inline-size: 100%;
             font-size: 2.4rem;
             text-align: end;
-            background-color: vars.$very-light-grayish-cyan;
+            background-color: $very-light-grayish-cyan;
             box-sizing: border-box;
 
             &:out-of-range {
-                outline-color: vars.$warning;
+                outline-color: $warning;
             }
         }
     }

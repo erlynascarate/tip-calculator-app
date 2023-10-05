@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import '../sass/InstallationButton.scss'
+import styles from './InstallationButton.module.scss'
 
 const InstallationButton = () => {
     const [deferredPrompt, setDeferredPrompt] = useState(null)
@@ -24,7 +24,7 @@ const InstallationButton = () => {
             {deferredPrompt && (
                 <button
                     onClick={install}
-                    className='installation-button'
+                    className={styles.installationButton}
                     type='button'
                 >
                     Install App

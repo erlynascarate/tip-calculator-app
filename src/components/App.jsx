@@ -1,13 +1,16 @@
-import { useRef, useState } from 'react'
-import '../sass/App.scss'
+import { useForm } from 'react-hook-form'
 import Header from './Header'
-import Bill from '../components/Bill'
-import SelectTip from '../components/SelectTip'
-import SelectTipButton from '../components/SelectTipButton'
-import NumberOfPeople from '../components/NumberOfPeople'
-import Info from '../components/Info'
-import InfoBox from '../components/InfoBox'
+import Form from './Form'
 import InstallationButton from './InstallationButton'
+import FormContainer from './FormContainer'
+import TextField from './TextField'
+import SelectTip from './SelectTip'
+import SelectTipButton from './SelectTipButton'
+import Info from './Info'
+import InfoBox from './InfoBox'
+
+import Person from '../assets/icons/Person'
+import Dollar from '../assets/icons/Dollar'
 
 const initialResult = {
     tipAmount: 0.0,
@@ -15,94 +18,117 @@ const initialResult = {
 }
 
 function App() {
-    const [result, setResult] = useState(initialResult)
+    const { formState, register, watch, reset, resetField } = useForm({
+        mode: 'onChange',
+        defaultValues: {
+            bill: '',
+            people: '',
+            customPercentage: '',
+        },
+    })
 
-    const bill = useRef()
-    const customTipPercentage = useRef()
-    const people = useRef()
+    const { errors } = formState
 
-    const calculate = () => {
-        const valueBill = parseFloat(bill.current.value)
+    let result = initialResult
 
-        const tipPercentages = document.querySelectorAll(
-            '.select-tip-btn__input'
-        )
+    const customPercentageValue = watch('customPercentage')
+    const billValue = watch('bill')
+    const peopleValue = watch('people')
 
-        const tipPercentage = [...tipPercentages].find(
-            percentage => percentage.checked === true
-        )
+    const customPercentage = parseFloat(customPercentageValue)
+    const percentageTip = parseFloat(watch('percentage'))
 
-        let valueTipPercentage
-        const valueCustomTipPercentage = parseFloat(
-            customTipPercentage.current.value
-        )
-        if (valueCustomTipPercentage) {
-            valueTipPercentage = valueCustomTipPercentage
-        } else {
-            valueTipPercentage = parseFloat(tipPercentage?.value) || 0
+    const bill = parseFloat(billValue)
+    const percentage = customPercentage || percentageTip
+    const people = parseInt(peopleValue)
+
+    const selectTipBtn = () => resetField('customPercentage')
+    const selectCustomTip = () => resetField('percentage')
+
+    const disabled =
+        Boolean(bill) === false &&
+        Boolean(percentage) === false &&
+        Boolean(people) === false
+
+    const isPosibleCalculating =
+        Boolean(bill) && Boolean(percentage) && Boolean(people)
+
+    if (isPosibleCalculating) {
+        const tip = (bill * percentage) / 100
+
+        const tipAmount = tip / people
+        const total = (bill + tip) / people
+
+        result = {
+            tipAmount,
+            total,
         }
-        const valuePeople = parseInt(people.current.value)
-
-        if (valueBill && valueTipPercentage && valuePeople) {
-            const tip = (valueBill * valueTipPercentage) / 100
-            const tipAmount = tip / valuePeople
-            const total = (valueBill + tip) / valuePeople
-
-            setResult({
-                tipAmount,
-                total,
-            })
-        } else {
-            setResult(initialResult)
-        }
+    } else {
+        result = initialResult
     }
 
-    const reset = () => {
-        bill.current.value = ''
-        const tipPercentages = document.querySelectorAll(
-            '.select-tip-btn__input'
-        )
-
-        tipPercentages.forEach(percentage => {
-            if (percentage.checked) {
-                percentage.checked = false
-            }
-        })
-        people.current.value = ''
-
-        setResult(initialResult)
-    }
+    const handleReset = () => reset()
 
     return (
         <>
             <Header />
             <main>
-                <form
-                    className='form'
-                    onSubmit={event => event.defaultPrevented()}
-                    onReset={reset}
-                >
+                <Form onReset={handleReset}>
                     <InstallationButton />
-                    <section className='form-container' onChange={calculate}>
-                        <Bill bill={bill} />
+
+                    <FormContainer>
+                        <TextField
+                            label='Bill'
+                            inputMode='decimal'
+                            Icon={<Dollar />}
+                            min={0.0}
+                            value={billValue}
+                            register={register('bill', {
+                                min: 0.0,
+                            })}
+                        />
                         <SelectTip
-                            customTipPercentage={customTipPercentage}
-                            render={percentage => (
+                            selectCustomTip={selectCustomTip}
+                            value={customPercentageValue}
+                            register={register('customPercentage')}
+                            render={(percentage) => (
                                 <SelectTipButton
                                     key={percentage}
                                     id={percentage}
+                                    selectTipBtn={selectTipBtn}
                                     percentage={percentage}
-                                    customTipPercentage={customTipPercentage}
+                                    register={register('percentage')}
                                 />
                             )}
                         />
-                        <NumberOfPeople people={people} />
-                    </section>
+                        <TextField
+                            label='Number of People'
+                            inputMode='numeric'
+                            helperText={errors.people?.message}
+                            Icon={<Person />}
+                            min={1}
+                            value={peopleValue}
+                            register={register('people', {
+                                validate: (value) => {
+                                    const people = parseInt(value) || 0
+                                    if (people === 0) {
+                                        return "Can't be zero"
+                                    } else if (value < 1) {
+                                        return "Can't be less than one"
+                                    } else {
+                                        return true
+                                    }
+                                },
+                            })}
+                        />
+                    </FormContainer>
+
                     <Info
+                        disabled={disabled}
                         result={result}
-                        render={box => <InfoBox key={box.title} {...box} />}
+                        render={(box) => <InfoBox key={box.title} {...box} />}
                     />
-                </form>
+                </Form>
             </main>
         </>
     )
